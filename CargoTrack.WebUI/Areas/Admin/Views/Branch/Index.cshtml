@@ -1,0 +1,35 @@
+﻿@model List<ResultBranchDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>Şubelerimiz</h3>
+<table class="table table-bordered table-hover">
+@{
+        int counter = 0;
+}
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Şube İsmi</th>
+            <th>Şehir</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var branch in Model)
+        {
+            counter++;
+            <tr>
+                <td>@counter</td>
+                <td>@branch.Name</td>
+                <td>@branch.City.Name</td>
+                <td>
+                    <a href="/Admin/Branch/Update/@branch.Id" class="btn btn-sm btn-warning">Güncelle</a>
+                    <a href="/Admin/Branch/Delete/@branch.Id" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Admin/Branch/Create" class="btn btn-sm btn-dark"> Yeni Şube Oluştur</a>

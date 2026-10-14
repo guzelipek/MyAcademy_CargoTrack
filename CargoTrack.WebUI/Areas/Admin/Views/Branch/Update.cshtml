@@ -1,0 +1,24 @@
+﻿@model UpdateBranchDto
+@{
+    ViewData["Title"] = "Update Branch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>Şube Güncelle</h3>
+<form method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Şube İsmi</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Şehir</label>
+        <select asp-for="CityId" class="form-control" asp-items="@ViewBag.cities">
+            <option disabled selected>---Şehri Seçiniz---</option>
+        </select>
+    </div>
+    <br/>
+    <button class="btn btn-primary">Kaydet</button>
+</form>

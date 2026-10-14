@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CargoTrack.Business/CargoTrack.Business.csproj" Id="aaf210cc-116d-4e37-97d3-8bb14aac3b68" />
+  <Project Path="CargoTrack.DataAccess/CargoTrack.DataAccess.csproj" Id="93177ae0-18b1-4caa-8f7b-94de5a8d41e9" />
+  <Project Path="CargoTrack.DTO/CargoTrack.DTO.csproj" Id="59bee030-030e-43d3-9a38-95c962906f57" />
+  <Project Path="CargoTrack.Entity/CargoTrack.Entity.csproj" Id="092ca85f-6a92-4bc9-bb13-84d1207210b2" />
+  <Project Path="CargoTrack.WebUI/CargoTrack.WebUI.csproj" Id="5cdbd626-d7e7-45a2-bfdb-c7e1934ef7ec" />
+</Solution>

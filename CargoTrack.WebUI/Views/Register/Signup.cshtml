@@ -1,0 +1,53 @@
+﻿
+@model RegisterUserDto
+@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Kullanıcı Kayıt Formu</h1>
+<div class="container-fluid col-8">
+    <form method="post">
+        <div class="row col-12">
+            <div class="form-group col-6">
+                <label>First Name</label>
+                <input asp-for="FirstName" class="form-control"/>
+                <span class="text-danger" asp-validation-for="FirstName"></span>
+            </div>
+            <div class="form-group col-6">
+                <label>Last Name</label>
+                <input asp-for="LastName" class="form-control"/>
+                <span class="text-danger" asp-validation-for="LastName"></span>
+            </div>
+        </div>
+        <div class="row col-12">
+            <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Email" class="form-control"/>
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+        </div>
+        <div class="row col-12">
+            <div class="form-group">
+                <label>Username</label>
+                <input asp-for="UserName" class="form-control" />
+                <span class="text-danger" asp-validation-for="UserName"></span>
+            </div>
+        </div>
+        <div class="row col-12">
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" asp-for="Password" class="form-control"/>
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" asp-for="ConfirmPassword" class="form-control"/>
+                <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+            </div>
+        </div>
+        
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <button class="btn btn-dark">Kayıt Ol</button>
+    </form>
+</div>

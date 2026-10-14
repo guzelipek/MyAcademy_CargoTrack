@@ -1,0 +1,48 @@
+﻿
+@model List<ResultUserDto>
+@{
+    ViewData["Title"] = "Kullanıcı Atama";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+<h3>Kullanıcı Listesi</h3>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Ad Soyad</th>
+            <th>Email</th>
+            <th>Kullanıcı Adı</th>
+            <th>Roller</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+                <td>@user.UserName</td>
+                <td>
+                    @if (user.Roles.Any())
+                    {
+                        @foreach (var role in user.Roles)
+                        {
+                            <div class="mb-1">
+                                <span class="badge bg-primary">@role</span>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <span class="text-muted">Rol atanmamış</span>
+                    }
+                </td>
+                <td><a href="/Admin/RoleAssign/AssignRole/@user.Id" class="btn btn-dark">Rol Ata</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
